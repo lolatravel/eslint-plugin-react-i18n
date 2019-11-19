@@ -1,0 +1,47 @@
+{
+  "name": "eslint-plugin-react-i18n",
+  "version": "0.0.0",
+  "description": "ESLint rules to help enforce i18n in react",
+  "keywords": [
+    "eslint",
+    "eslintplugin",
+    "eslint-plugin",
+    "react",
+    "i18n",
+    "react-i18n",
+    "i18next",
+    "react-i18next",
+    "internationalization"
+  ],
+  "author": "Emmanuel Roussel",
+  "main": "lib/index.js",
+  "scripts": {
+    "lint": "eslint lib/** tests/**",
+    "lint:fix": "npm run lint -- --fix",
+    "pretest": "npm run lint:fix",
+    "test": "mocha tests --recursive"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lolatravel/eslint-plugin-react-i18n"
+  },
+  "homepage": "https://github.com/lolatravel/eslint-plugin-react-i18n",
+  "bugs": "https://github.com/lolatravel/eslint-plugin-react-i18n/issues",
+  "peerDependencies": {
+    "eslint": "^3 || ^4 || ^5 || ^6"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.6",
+    "eslint": "^3 || ^4 || ^5 || ^6",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-prettier": "^6.4.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-prettier": "^3.1.1",
+    "mocha": "^5.2.0",
+    "prettier": "1.18.2"
+  },
+  "engines": {
+    "node": ">=6"
+  },
+  "license": "ISC"
+}

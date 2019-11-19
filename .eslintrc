@@ -1,0 +1,20 @@
+{
+  "extends": ["eslint:recommended", "airbnb-base", "plugin:prettier/recommended"],
+  "parser": "babel-eslint",
+  "env": {
+    "es6": true,
+    "node": true
+  },
+  "rules": {
+    "func-names": "off",
+    "strict": "off"
+  },
+  "overrides": [
+    {
+      "files": ["tests/**"],
+      "rules": {
+        "no-template-curly-in-string": "off"
+      }
+    }
+  ]
+}
