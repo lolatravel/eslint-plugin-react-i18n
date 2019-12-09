@@ -18,7 +18,6 @@
   "scripts": {
     "lint": "eslint lib/** tests/**",
     "lint:fix": "npm run lint -- --fix",
-    "pretest": "npm run lint:fix",
     "test": "mocha tests --recursive"
   },
   "repository": {
