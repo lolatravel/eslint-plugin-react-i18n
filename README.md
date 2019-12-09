@@ -1,5 +1,7 @@
 # eslint-plugin-react-i18n
 
+[![Build Status](https://travis-ci.org/lolatravel/eslint-plugin-react-i18n.svg?branch=master)](https://travis-ci.org/lolatravel/eslint-plugin-react-i18n)
+
 ESLint rules to help enforce i18n in react.
 
 Primarily supports i18next, but happy to accept PRs to add support for other popular react i18n frameworks.
