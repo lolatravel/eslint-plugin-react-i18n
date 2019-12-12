@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-react-i18n",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "ESLint rules to help enforce i18n in react",
   "keywords": [
     "eslint",
