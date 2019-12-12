@@ -1,6 +1,6 @@
 # eslint-plugin-react-i18n
 
-[![Build Status](https://travis-ci.org/lolatravel/eslint-plugin-react-i18n.svg?branch=master)](https://travis-ci.org/lolatravel/eslint-plugin-react-i18n)
+[![Build Status](https://travis-ci.org/lolatravel/eslint-plugin-react-i18n.svg?branch=master)](https://travis-ci.org/lolatravel/eslint-plugin-react-i18n) [![npm version](https://img.shields.io/npm/v/eslint-plugin-react-i18n)](https://www.npmjs.com/package/eslint-plugin-react-i18n)
 
 ESLint rules to help enforce i18n in react.
 
