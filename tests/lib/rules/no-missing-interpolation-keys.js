@@ -54,6 +54,9 @@ ruleTester.run("no-missing-interpolation-keys", rule, {
         "t('Hi {{firstName}} {{lastName}}', { firstName: 'John', lastName: 'Smith' });"
     },
     {
+      code: "t('With {{ spaces }}', { spaces: 'spaces' });"
+    },
+    {
       code: "someFunction('Hi {{name}}');"
     },
     {
