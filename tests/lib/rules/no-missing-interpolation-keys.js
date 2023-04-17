@@ -17,51 +17,49 @@ const ruleTester = new RuleTester({ parser: parsers.BABEL_ESLINT });
 ruleTester.run("no-missing-interpolation-keys", rule, {
   valid: [
     {
-      code: "t('Some text');"
+      code: "t('Some text');",
     },
     {
-      code: "t('SomeKey', { firstName: 'John', lastName: 'Smith' });"
+      code: "t('SomeKey', { firstName: 'John', lastName: 'Smith' });",
     },
     {
-      code: "t(`Some text`);"
+      code: "t(`Some text`);",
     },
     {
-      code: "t(`${value} under`);"
+      code: "t(`${value} under`);",
     },
     {
-      code: "t('Hi {{name}}', { name: 'Bob' });"
+      code: "t('Hi {{name}}', { name: 'Bob' });",
     },
     {
-      code: "t('Hi {{name}}', { name: 'Bob', someOtherKey: 'not needed' });"
+      code: "t('Hi {{name}}', { name: 'Bob', someOtherKey: 'not needed' });",
     },
     {
-      code: "t('Hi {{name}}', user);"
+      code: "t('Hi {{name}}', user);",
     },
     {
-      code:
-        "t('Hi {{firstName}} {{lastName}}', { ...user, lastName: 'Smith' });"
+      code: "t('Hi {{firstName}} {{lastName}}', { ...user, lastName: 'Smith' });",
     },
     {
       code: "someFunction('Hi {{name}}', { name: 'Bob' });",
-      options: [{ functionNames: ["someFunction"] }]
+      options: [{ functionNames: ["someFunction"] }],
     },
     {
       code: "t('Hi [[name]] {{somethingElse}}', { name: 'Bob' });",
-      options: [{ prefix: "[[", suffix: "]]" }]
+      options: [{ prefix: "[[", suffix: "]]" }],
     },
     {
-      code:
-        "t('Hi {{firstName}} {{lastName}}', { firstName: 'John', lastName: 'Smith' });"
+      code: "t('Hi {{firstName}} {{lastName}}', { firstName: 'John', lastName: 'Smith' });",
     },
     {
-      code: "t('With {{ spaces }}', { spaces: 'spaces' });"
+      code: "t('With {{ spaces }}', { spaces: 'spaces' });",
     },
     {
-      code: "someFunction('Hi {{name}}');"
+      code: "someFunction('Hi {{name}}');",
     },
     {
-      code: "const message = 'Hi {{name}}';"
-    }
+      code: "const message = 'Hi {{name}}';",
+    },
   ],
 
   invalid: [
@@ -72,9 +70,9 @@ ruleTester.run("no-missing-interpolation-keys", rule, {
           message: ERROR_MESSAGE,
           line: 1,
           column: 3,
-          type: "Literal"
-        }
-      ]
+          type: "Literal",
+        },
+      ],
     },
     {
       code: "t('Hi {{firstName}} {{lastName}}', { firstName: 'John' });",
@@ -83,9 +81,9 @@ ruleTester.run("no-missing-interpolation-keys", rule, {
           message: ERROR_MESSAGE,
           line: 1,
           column: 3,
-          type: "Literal"
-        }
-      ]
+          type: "Literal",
+        },
+      ],
     },
     {
       code: "t('Hi [[name]]');",
@@ -95,9 +93,9 @@ ruleTester.run("no-missing-interpolation-keys", rule, {
           message: ERROR_MESSAGE,
           line: 1,
           column: 3,
-          type: "Literal"
-        }
-      ]
+          type: "Literal",
+        },
+      ],
     },
     {
       code: "someFunction('Hi {{name}}');",
@@ -107,9 +105,9 @@ ruleTester.run("no-missing-interpolation-keys", rule, {
           message: ERROR_MESSAGE,
           line: 1,
           column: 14,
-          type: "Literal"
-        }
-      ]
+          type: "Literal",
+        },
+      ],
     },
     {
       code: "t(`Hi {{name}}`);",
@@ -118,9 +116,9 @@ ruleTester.run("no-missing-interpolation-keys", rule, {
           message: ERROR_MESSAGE,
           line: 1,
           column: 3,
-          type: "TemplateLiteral"
-        }
-      ]
-    }
-  ]
+          type: "TemplateLiteral",
+        },
+      ],
+    },
+  ],
 });

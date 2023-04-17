@@ -17,44 +17,44 @@ const ruleTester = new RuleTester({ parser: parsers.BABEL_ESLINT });
 ruleTester.run("no-dynamic-translation-keys", rule, {
   valid: [
     {
-      code: "someFunction(arg)"
+      code: "someFunction(arg)",
     },
     {
-      code: "someFunction(...arg)"
+      code: "someFunction(...arg)",
     },
     {
-      code: "someFunction('arg', { name: 'John' })"
+      code: "someFunction('arg', { name: 'John' })",
     },
     {
-      code: "someFunction(`arg${number}`)"
+      code: "someFunction(`arg${number}`)",
     },
     {
       code: "someFunction('myKey')",
-      options: [{ functionNames: ["someFunction"] }]
+      options: [{ functionNames: ["someFunction"] }],
     },
     {
       code: "someFunction('Hello {{name}}', { name: 'John' })",
-      options: [{ functionNames: ["someFunction"] }]
+      options: [{ functionNames: ["someFunction"] }],
     },
     {
       code: "i18n.translate('Hello {{name}}', { name: 'John' })",
-      options: [{ functionNames: ["translate"] }]
+      options: [{ functionNames: ["translate"] }],
     },
     {
-      code: "t('myKey')"
+      code: "t('myKey')",
     },
     {
-      code: "t(`myKey`)"
+      code: "t(`myKey`)",
     },
     {
-      code: "t('Hi there!')"
+      code: "t('Hi there!')",
     },
     {
-      code: "t('Hi {{name}}!', { name: 'John' })"
+      code: "t('Hi {{name}}!', { name: 'John' })",
     },
     {
-      code: "t('SomeKey', { firstName: 'John', lastName: 'Smith' });"
-    }
+      code: "t('SomeKey', { firstName: 'John', lastName: 'Smith' });",
+    },
   ],
 
   invalid: [
@@ -65,9 +65,9 @@ ruleTester.run("no-dynamic-translation-keys", rule, {
           message: ERROR_MESSAGE,
           line: 1,
           column: 1,
-          type: "CallExpression"
-        }
-      ]
+          type: "CallExpression",
+        },
+      ],
     },
     {
       code: "t(...keys)",
@@ -76,9 +76,9 @@ ruleTester.run("no-dynamic-translation-keys", rule, {
           message: ERROR_MESSAGE,
           line: 1,
           column: 1,
-          type: "CallExpression"
-        }
-      ]
+          type: "CallExpression",
+        },
+      ],
     },
     {
       code: "t('Hello' + ' there!')",
@@ -87,9 +87,9 @@ ruleTester.run("no-dynamic-translation-keys", rule, {
           message: ERROR_MESSAGE,
           line: 1,
           column: 1,
-          type: "CallExpression"
-        }
-      ]
+          type: "CallExpression",
+        },
+      ],
     },
     {
       code: "t(`Hello ${name}`)",
@@ -98,9 +98,9 @@ ruleTester.run("no-dynamic-translation-keys", rule, {
           message: ERROR_MESSAGE,
           line: 1,
           column: 1,
-          type: "CallExpression"
-        }
-      ]
+          type: "CallExpression",
+        },
+      ],
     },
     {
       code: "i18next.t(key)",
@@ -109,9 +109,9 @@ ruleTester.run("no-dynamic-translation-keys", rule, {
           message: ERROR_MESSAGE,
           line: 1,
           column: 1,
-          type: "CallExpression"
-        }
-      ]
+          type: "CallExpression",
+        },
+      ],
     },
     {
       code: "utils.i18.next.t(key)",
@@ -120,9 +120,9 @@ ruleTester.run("no-dynamic-translation-keys", rule, {
           message: ERROR_MESSAGE,
           line: 1,
           column: 1,
-          type: "CallExpression"
-        }
-      ]
+          type: "CallExpression",
+        },
+      ],
     },
     {
       code: "t(condition ? 'error' : 'success')",
@@ -131,9 +131,9 @@ ruleTester.run("no-dynamic-translation-keys", rule, {
           message: ERROR_MESSAGE,
           line: 1,
           column: 1,
-          type: "CallExpression"
-        }
-      ]
+          type: "CallExpression",
+        },
+      ],
     },
     {
       code: "translate(`Hello ${name}`)",
@@ -143,9 +143,9 @@ ruleTester.run("no-dynamic-translation-keys", rule, {
           message: ERROR_MESSAGE,
           line: 1,
           column: 1,
-          type: "CallExpression"
-        }
-      ]
+          type: "CallExpression",
+        },
+      ],
     },
     {
       code: "translate(greeting)",
@@ -155,9 +155,9 @@ ruleTester.run("no-dynamic-translation-keys", rule, {
           message: ERROR_MESSAGE,
           line: 1,
           column: 1,
-          type: "CallExpression"
-        }
-      ]
+          type: "CallExpression",
+        },
+      ],
     },
     {
       code: "translate(...greetings)",
@@ -167,9 +167,9 @@ ruleTester.run("no-dynamic-translation-keys", rule, {
           message: ERROR_MESSAGE,
           line: 1,
           column: 1,
-          type: "CallExpression"
-        }
-      ]
-    }
-  ]
+          type: "CallExpression",
+        },
+      ],
+    },
+  ],
 });
